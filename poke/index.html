@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&family=Orbitron:wght@400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokedex</title>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+        <div class="logo">
+            <img src="./img/póke1.png" alt="Logo pokemon" class="logo-img">
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar..." class="search-input" id="search-input">
+            <button class="search-button" id="search-button">
+                <img src="./img/lupa (2).png" alt="Pesquisar" class="search-icon">
+            </button>
+            <button class="atualizar" onclick="mostrarTodosCards()"> Voltar</button>
+        </div>
+       
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="mensagem-erro" class="erro-busca" style="display: none;">Nenhum Pokémon encontrado.</div>
+</div>
+    <div class="container">
+        <div class="conteudo">
+            <img src="./img/Bulbasauro.png" class="img-pokemom" onclick="abrirModal('Bulbasauro')" alt="Bulbasauro">
+            <h2 class="nome-pokemom " >Bulbasauro</h2>
+        </div>
+
+        <div class="conteudo">
+            <img src="./img/Charmander.png" class="img-pokemom"  onclick="abrirModal('Charmander')" alt="Charmander">
+            <h2 class="nome-pokemom " >Charmander</h2>
+        </div>
+
+        <div class="conteudo">
+            <img src="./img/Squirtle.png" class="img-pokemom" onclick="abrirModal('Squirtle')" alt="Squirtle">
+            <h2 class="nome-pokemom ">Squirtle</h2>
+        </div>
+
+        <div class="conteudo">
+            <img src="./img/Pidgey.png" class="img-pokemom" onclick="abrirModal('Pidgey')" alt="Pidgey">
+            <h2 class="nome-pokemom " >Pidgey</h2>
+        </div>
+        
+    </div>
+    <div class="container1">
+      <div class="conteudo">
+        <img src="./img/Dratini.png" class="img-pokemom" onclick="abrirModal('Dratini')" alt="Dratini">
+        <h2 class="nome-pokemom " >Dratini</h2>
+    </div>
+      <div class="conteudo">
+        <img src="./img/Caterpie.png" class="img-pokemom" onclick="abrirModal('Caterpie')"alt="Caterpie">
+        <h2 class="nome-pokemom ">Caterpie</h2>
+    </div>
+    <div class="conteudo">
+      <img src="./img/Weedle.png" class="img-pokemom" onclick="abrirModal('Weedle')"alt="Weedle">
+      <h2 class="nome-pokemom " >Weedle</h2>
+  </div>
+  <div class="conteudo">
+    <img src="./img/Chikorita.png" class="img-pokemom" onclick="abrirModal('Chikorita')" alt="Chikorita">
+    <h2 class="nome-pokemom " >Chikorita</h2>
+</div>
+</div>
+
+    
+
+    
+    <!-- Modal Bulbasauro-->
+    <div id="Bulbasauro" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal('Bulbasauro')">&times;</span>
+          <h2 class="nome">Bulbasauro</h2>
+          <div class="modal-inner">
+            <div class="carousel">
+                <img src="./img/Bulbasauro.png" alt="Bulbasauro" class="img-card" />
+                <img src="./img/Ivysaur.png" alt="Ivysaur" class="img-card" style="display: none;" />
+                <img src="./img/Venusaur.png" alt="Venusau" class="img-card" style="display: none;" />
+              <!-- Setas de navegação -->
+              <button class="prev" onclick="mudarImagem('Bulbasauro', -1)">&#10094;</button>
+              <button class="next" onclick="mudarImagem('Bulbasauro', 1)">&#10095;</button>
+            </div>
+            <div class="descricao-info">
+                <p class="altura"><strong>Altura:</strong> </p>
+                <p class="peso"><strong>Peso:</strong> </p>
+                <p class="categoria"><strong>Categoria:</strong> </p>
+                <p class="habilidades"><strong>Habilidades:</strong> </p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Charmander-->
+    <div id="Charmander" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal('Charmander')">&times;</span>
+          <h2 class="nome">Charmander</h2>
+          <div class="modal-inner">
+            <div class="carousel">
+                <img src="./img/Charmander.png" alt="Charmander" class="img-card" />
+                <img src="./img/Charmeleon.png" alt="Charmeleon" class="img-card" style="display: none;" />
+                <img src="./img/Charizard.png" alt="Charizard" class="img-card" style="display: none;" />
+              <!-- Setas de navegação -->
+              <button class="prev" onclick="mudarImagem('Charmander', -1)">&#10094;</button>
+              <button class="next" onclick="mudarImagem('Charmander', 1)">&#10095;</button>
+            </div>
+            <div class="descricao-info">
+                <p class="altura"><strong>Altura:</strong> </p>
+                <p class="peso"><strong>Peso:</strong> </p>
+                <p class="categoria"><strong>Categoria:</strong> </p>
+                <p class="habilidades"><strong>Habilidades:</strong> </p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+
+             <!-- Modal Squirtle    -->
+    <div id="Squirtle" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal('Squirtle')">&times;</span>
+          <h2 class="nome">Squirtle</h2>
+          <div class="modal-inner">
+            <div class="carousel">
+                <img src="./img/Squirtle.png" alt="Squirtle" class="img-card" />
+                <img src="./img/Wartortle.png" alt="Wartortle" class="img-card" style="display: none;" />
+                <img src="./img/Blastoise.png" alt="Blastoise" class="img-card" style="display: none;" />
+              <!-- Setas de navegação -->
+              <button class="prev" onclick="mudarImagem('Squirtle', -1)">&#10094;</button>
+              <button class="next" onclick="mudarImagem('Squirtle', 1)">&#10095;</button>
+            </div>
+            <div class="descricao-info">
+                <p class="altura"><strong>Altura:</strong> </p>
+                <p class="peso"><strong>Peso:</strong> </p>
+                <p class="categoria"><strong>Categoria:</strong> </p>
+                <p class="habilidades"><strong>Habilidades:</strong> </p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+
+                   <!-- Modal Pidgey   -->
+    <div id="Pidgey" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal('Pidgey')">&times;</span>
+          <h2 class="nome">Pidgey</h2>
+          <div class="modal-inner">
+            <div class="carousel">
+                <img src="./img/Pidgey.png" alt="Pidgey" class="img-card" />
+                <img src="./img/Pidgeotto.png" alt="Pidgeotto" class="img-card" style="display: none;" />
+                <img src="./img/Pidgeot.png" alt="Pidgeot" class="img-card" style="display: none;" />
+              <!-- Setas de navegação -->
+              <button class="prev" onclick="mudarImagem('Pidgey', -1)">&#10094;</button>
+              <button class="next" onclick="mudarImagem('Pidgey', 1)">&#10095;</button>
+            </div>
+            <div class="descricao-info">
+                <p class="altura"><strong>Altura:</strong> </p>
+                <p class="peso"><strong>Peso:</strong> </p>
+                <p class="categoria"><strong>Categoria:</strong> </p>
+                <p class="habilidades"><strong>Habilidades:</strong> </p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+         
+    
+    <!-- Modal Dratini-->
+    <div id="Dratini" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal('Dratini')">&times;</span>
+        <h2 class="nome">Dratini</h2>
+        <div class="modal-inner">
+          <div class="carousel">
+              <img src="./img/Dratini.png" alt="Dratini" class="img-card" />
+              <img src="./img/Dragonair.png" alt="Dragonair" class="img-card" style="display: none;" />
+              <img src="./img/Dragonite.png" alt="Dragonite" class="img-card" style="display: none;" />
+            <!-- Setas de navegação -->
+            <button class="prev" onclick="mudarImagem('Dratini', -1)">&#10094;</button>
+            <button class="next" onclick="mudarImagem('Dratini', 1)">&#10095;</button>
+          </div>
+          <div class="descricao-info">
+              <p class="altura"><strong>Altura:</strong> </p>
+              <p class="peso"><strong>Peso:</strong> </p>
+              <p class="categoria"><strong>Categoria:</strong> </p>
+              <p class="habilidades"><strong>Habilidades:</strong> </p>
+              <p class="fraquezas"> <strong>Fraquezas:</strong> </p>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Modal Caterpie-->
+    <div id="Caterpie" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal('Caterpie')">&times;</span>
+        <h2 class="nome">Caterpie</h2>
+        <div class="modal-inner">
+          <div class="carousel">
+              <img src="./img/Caterpie.png" alt="Caterpie" class="img-card" />
+              <img src="./img/Metapod.png" alt="Metapod" class="img-card" style="display: none;" />
+              <img src="./img/Butterfree.png" alt="Butterfree" class="img-card" style="display: none;" />
+            <!-- Setas de navegação -->
+            <button class="prev" onclick="mudarImagem('Caterpie', -1)">&#10094;</button>
+            <button class="next" onclick="mudarImagem('Caterpie', 1)">&#10095;</button>
+            
+          </div>
+          <div class="descricao-info">
+              <p class="altura"><strong>Altura:</strong> </p>
+              <p class="peso"><strong>Peso:</strong> </p>
+              <p class="categoria"><strong>Categoria:</strong> </p>
+              <p class="habilidades"><strong>Habilidades:</strong> </p>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+       
+    <!-- Modal Weedle-->
+    <div id="Weedle" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal('Weedle')">&times;</span>
+        <h2 class="nome">Weedle</h2>
+        <div class="modal-inner">
+          <div class="carousel">
+              <img src="./img/Weedle.png" alt="Weedle" class="img-card" />
+              <img src="./img/Kakuna.png" alt="Kakuna" class="img-card" style="display: none;" />
+              <img src="./img/Beedrill.png" alt="Beedrill" class="img-card" style="display: none;" />
+            <!-- Setas de navegação -->
+            <button class="prev" onclick="mudarImagem('Weedle', -1)">&#10094;</button>
+            <button class="next" onclick="mudarImagem('Weedle', 1)">&#10095;</button>
+          </div>
+          <div class="descricao-info">
+              <p class="altura"><strong>Altura:</strong> </p>
+              <p class="peso"><strong>Peso:</strong> </p>
+              <p class="categoria"><strong>Categoria:</strong> </p>
+              <p class="habilidades"><strong>Habilidades:</strong> </p>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Modal Chikorita-->
+    <div id="Chikorita" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal('Chikorita')">&times;</span>
+        <h2 class="nome">Chikorita</h2>
+        <div class="modal-inner">
+          <div class="carousel">
+              <img src="./img/Chikorita.png" alt="Chikorita" class="img-card" />
+              <img src="./img/Bayleef.png" alt="Bayleef" class="img-card" style="display: none;" />
+              <img src="./img/Meganium.png" alt="Bayleef" class="img-card" style="display: none;" />
+            <!-- Setas de navegação -->
+            <button class="prev" onclick="mudarImagem('Chikorita', -1)">&#10094;</button>
+            <button class="next" onclick="mudarImagem('Chikorita', 1)">&#10095;</button>
+          </div>
+          <div class="descricao-info">
+              <p class="altura"><strong>Altura:</strong> </p>
+              <p class="peso"><strong>Peso:</strong> </p>
+              <p class="categoria"><strong>Categoria:</strong> </p>
+              <p class="habilidades"><strong>Habilidades:</strong> </p>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <div class="logo-footer">
+            <img src="./img/pokebo.png" alt="pokebola" class="logo-img-footer">
+            
+          </div>
+          <p class="copyright">&copy; 2024 Todos os direitos reservados. Desenvolvido por Luiz Ricardo.</p>
+          <div class="social-icons">
+           <img src="./img/amare.png" alt="Equipe Vermelha">
+           <img src="./img/azull.png" alt="Equipe Azul">
+           <img src="./img/vrem.png" alt="Equipe Amarelo">
+          </div>
+        </div>
+      </footer>
+  
+      <script src="script.js"></script>
+</body>
+</html>
